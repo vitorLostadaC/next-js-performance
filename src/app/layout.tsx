@@ -1,4 +1,5 @@
 import { Sidebar } from '@/components/sidebar'
+import { QueryProvider } from '@/providers/query-provider'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Sidebar>{children}</Sidebar>
+        <QueryProvider>
+          <Sidebar>{children}</Sidebar>
+        </QueryProvider>
       </body>
     </html>
   )
