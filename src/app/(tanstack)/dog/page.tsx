@@ -4,8 +4,6 @@ import { getDogDataQueryOptions } from '@/requests/config'
 import { useQuery } from '@tanstack/react-query'
 
 export default function DogPage() {
-  'use client'
-
   const { data, isPending } = useQuery(getDogDataQueryOptions)
 
   return (
